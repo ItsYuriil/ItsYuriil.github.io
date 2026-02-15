@@ -1,0 +1,15 @@
+{% assign categories_array = include.categories | split: "|" %}
+{% if categories_array.size > 0 %}
+<div class="category-list-container">
+    <p class="category-list">
+        <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+        {% for category in categories_array %}
+            {% if category != "" %}
+                <a href="{{ site.baseurl }}/categories#{{ category | cgi_escape }}" class="category-link">
+                    <span class="category">{{ category }}</span>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </p>
+</div>
+{% endif %}
