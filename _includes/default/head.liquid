@@ -4,8 +4,8 @@
 
     <!-- Theme Mode-->
     <script>
-        const darkBtn = "{{ site.data.language.str_dark | default: "Dark" }}";
-        const lightBtn = "{{ site.data.language.str_light | default: "Light" }}";
+        const darkBtn = "{{ site.data.language.str_dark | default: \"Dark\" }}";
+        const lightBtn = "{{ site.data.language.str_light | default: \"Light\" }}";
         const isAutoTheme = {% if site.color_theme == 'auto' %}true{% else %}false{% endif %};
         const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         if (isAutoTheme) {
@@ -27,6 +27,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/core.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 
     <!--Favicon-->
     <link rel="shortcut icon" href="{{ site.favicon | relative_url }}" type="image/x-icon">
